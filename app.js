@@ -15,8 +15,14 @@ const Course = require('./public/src/models/courseModel');
 const User = require('./public/src/models/userModel');
 
 //mongoose.connect('mongodb://localhost/nouquick');
-mongoose.connect('mongodb://iyinoluwa:iyinoluwa1@ds037611.mlab.com:37611/nouquick');
-//mongodb://iyinoluwa:iyinoluwa1@ds037611.mlab.com:37611/nouquick
+(function db () {
+    try {
+        return mongoose.connect('mongodb://iyinoluwa:iyinoluwa1@ds037611.mlab.com:37611/nouquick');
+    } catch (error) {
+        console.error();
+    }
+})();
+
 const app = express();
 const port = 3000;
 const adminRouter = require('./public/src/routes/adminRoutes');
