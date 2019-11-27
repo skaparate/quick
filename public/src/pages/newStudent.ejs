@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>nouquick</title>
+
+  <link  type="text/css" href="/fonts/css/all.css" rel="stylesheet">
+  <link type="text/css" href="/style/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style/form.css" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
+  <script src="/index.js"></script>
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <div class="container">
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+          <a href="/admin" class="title">nouquick</a>
+          <a href="/" class="nav-link"><i class="fas fa-location-arrow"></i></a>    
+      </div>
+      <header>
+          <h2>New Student</h2>
+      </header>
+      <div class="nav-content">
+              <a href="/admin#students" class="return-tab"><i class="fas fa-book"></i></a>
+      </div>
+   </nav>
+   <main>
+    <form class="add-content" id='studentForm' action="/admin/new-student" method="POST">
+      <div class="input-field">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name='firstName' placeholder="e.g. teslim" aria-required="true" required/>
+      </div>
+      <div class="input-field">
+          <label for="surname">Last Name:</label>
+          <input type="text" id="surname" name="lastName" placeholder="e.g. chigozie" aria-required="true" required/>
+      </div>
+      <div class="input-field">
+          <label for="matricNumber">Matriculation Number:</label>
+          <input type="text" id="matricNumber" name="matric" 
+          placeholder="e.g. NOU011123456" maxlength="12" minlength="12" aria-required="true" required/>
+      </div>
+      
+      <div class="input-field">
+          <label for="programme">Programme:</label>
+          <input list="programmes" id="programme" name="programme" aria-required="true" required/>
+            <datalist id="programmes">
+              <option value="B.Sc" data-name="Bachelors Degree">
+              <option value="M.Sc" data-name="Masters Degree">    
+            </datalist>
+      </div>
+
+      <div class="input-field">
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" aria-required="true" required />
+      </div>
+      <div class="input-field">
+          <fieldset>
+            <legend>Courses:</legend>
+            <%for(let i = 0; i < courses.length; i++){%>
+            <label for="<%=courses[i].code%>"><%=courses[i].title%></label>
+            <input type="checkbox" id='<%=courses[i].code%>' name="courses[]" value="<%=courses[i].title%>">
+            <%}%>  
+          </fieldset>  
+      </div>
+      
+      <div class="submit-field">
+          <input type="submit"/>
+          <button><a href="/">Cancel</a></button>
+      </div>   
+    </form>
+   </main>
+  </div>
+
+</body>
+</html>

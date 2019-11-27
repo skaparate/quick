@@ -1,0 +1,36 @@
+{
+  "name": "nouquick",
+  "version": "1.0.0",
+  "description": "an app for checking student info and results",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set DEBUG=app & nodemon app.js"
+  },
+  "author": "iyinoluwa",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "debug": "^4.1.1",
+    "ejs": "^2.7.1",
+    "eslint": "^6.6.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "firebase": "^7.3.0",
+    "method-override": "^3.0.0",
+    "mongodb": "^3.3.4",
+    "mongoose": "^5.7.11",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500"
+  }
+}

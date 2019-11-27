@@ -1,0 +1,362 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+/* colours */
+:root {
+    --primary: #e0f2f1;
+    --secondary: #009688;
+    --title: #004d40;
+}
+
+
+/* nav layout */
+.nav-extended {
+    background-color: var(--secondary);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    font-family: 'Courier New', Courier, monospace;
+    position: sticky;
+    top: 0;
+}
+
+.nav-extended a {
+    text-decoration: none;
+}
+
+.nav-extended ul {
+    list-style-type: none;
+}
+
+.nav-wrapper {
+    display: flex;
+    margin-bottom: 2em;
+    height: 5vh;
+
+}
+
+.nav-wrapper > a {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    margin-left: 0.5em;
+    color: #fff;
+}
+
+
+.nav-wrapper > a:hover,
+.nav-wrapper > a:active {
+    background-color: var(--primary);
+    color: var(--title);
+    border-bottom: 2px solid var(--secondary);
+}
+
+
+
+.title {
+    color: var(--title);
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+/* tab styles */
+
+.nav-content ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabs li {
+    padding: 0;
+    margin: 0;
+    width: 33%;
+}
+
+.tabs a {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;  
+    color: #fff;
+}
+
+.tabs li a:hover,
+.tabs li a:active {
+    background-color: var(--primary);
+    color: var(--title);
+    border-bottom: 2px solid var(--secondary);
+}
+
+main {
+    background-color: var(--primary);
+    margin: 0;
+}
+
+.add-wrapper {
+    display: none;
+}
+
+.add-wrapper:target {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    margin: 0 auto;
+    color: #fff;
+    border: 1px solid black;
+}
+
+.add-wrapper:target > li {
+    padding: 0;
+    margin: 0;
+}
+
+/* admin content styles */
+.admin-content {
+    display: none;
+}
+
+.admin-content:target {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.5em;
+}
+
+.admin-content:target .student-profile {
+    background-color: #fff;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.admin-content:target .student-profile > div {
+    width: 100%;
+    text-align: center;
+    padding: 0.2em;
+}
+
+.admin-content:target .student-profile > p {
+    width: 100%;
+    text-align: center;
+}
+
+.admin-content:target .student-profile > a {
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.admin-content:target .student-profile > div > form {
+    margin-top: 20px;
+}
+
+.admin-content:target > div {
+    padding-bottom: 10px;
+}
+
+.admin-content:target > div,
+.single-profile > div {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    font-weight: bold;
+    overflow-x: auto;
+}
+
+.admin-content:target > div > table {
+    color: red;
+    margin: 0 auto;
+}
+
+.admin-content:target .student-profile > div {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.admin-content:target .student-profile > div span {
+    margin-right: 30px;
+}
+
+.admin-content:target .student-profile > div form{
+    margin: 0;
+    padding: 0;
+}
+
+
+hr {
+    width: 80%;
+}
+/*login styles*/
+
+.logtitle {
+    text-align: center;
+}
+
+.logtitle h2 {
+    border: 1px solid var(--secondary);
+    background-color: #fff;
+}
+.login-nav {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.login-nav a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border: 1px solid var(--secondary);
+    color: var(--title);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.login-nav a:active,
+.login-nav a:hover {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.login-content {
+    display: none;
+}
+
+.login-content:target {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 10px;
+}
+
+.login-content:target form {   
+    padding: 1em 1.2em;
+}
+
+.login-content:target .login-field {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.login-content:target .login-field > label {
+    width: 100%;
+    font-weight: bold;
+}
+
+.login-content:target .login-field > input {
+    width: 100%;
+    margin: 1.2em 0;
+    padding: 0.5em;
+}
+
+.login-content:target .login-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-content:target .login-button > button {
+    width: 280px;
+    background-color: var(--secondary);
+    color: #fff;
+    padding: 0.5em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+
+
+/*single profile styles*/
+.single-profile > * {
+    border: 1px solid black;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+}
+
+
+.single-profile > div {
+    margin: 5px;
+    background-color: #fff;
+}
+
+.single-profile > div > table {
+    margin: 0 auto;
+}
+
+.single-profile tr,.single-profile td  {
+    color: blue;
+}
+
+.active {
+    display: block;
+}
+
+#buttons {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+#buttons a {
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 2px;
+    width: 50%;
+    text-align: center;
+    margin-right: 5px;
+}
+
+#buttons button {
+    border: 1px solid red;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#buttons a:hover {
+    background-color: #fff;
+    color: #004d40;
+}
+
+#buttons button:hover {
+    background-color: #fff;
+    color: red;
+}
+
+/**wdith style for desktops */
+@media only screen and (min-width: 768px) {
+    .admin-content:target .student-profile {
+        width: 50%;
+    }
+
+}

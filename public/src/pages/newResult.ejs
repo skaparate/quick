@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>nouquick</title>
+
+  <link  type="text/css" href="/fonts/css/all.css" rel="stylesheet">
+  <link type="text/css" href="/style/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style/form.css" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
+  <script src="/index.js"></script>
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-extended">
+                <div class="nav-wrapper">
+                    <a href="/admin" class="title">nouquick</a> 
+                    <a href="/" class="nav-link"><i class="fas fa-location-arrow"></i></a>     
+                </div>
+                <header>
+                    <h2>New Result</h2>
+                </header>
+          <div class="nav-content">
+                  <a href="/admin#results" class="return-tab"><i class="fas fa-receipt"></i></a>
+          </div>
+       </nav>
+       <main> 
+          <form class="add-content" id='resultForm' method="POST" action="/admin/new-result">
+                <div class="input-field">
+                        <label for="matricNumber">Matric Number</label>
+                        <input type="text" id="matricNumber" name="score[matric]" placeholder="e.g. NOU451235011" required>
+                </div>     
+                <div class="input-field">
+                  <%for(let i = 0; i < courses.length; i++){%>
+                  <label for="result"><%=courses[i].code%></label>
+                  <input type="radio" id="result" name="code" value="<%=courses[i].code%>">
+                  <%}%>
+                </div>
+                <div class="input-field">
+                        <label for="status">Status</label>
+                        <input type="text" id="matricNumber" name="score[status]" placeholder="e.g. B" minlength="1" maxlength="1" required>
+                </div>  
+                <div class="submit-field">
+                    <button>Submit</button>
+                    <button><a href="/admin#results">Cancel</a></button>
+                </div>  
+          </form>
+       </main>
+      </div>
+    
+
+
+</body>
+</html>

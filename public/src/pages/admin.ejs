@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>nouquick</title>
+  <link href="/fonts/css/all.css" rel="stylesheet">
+  <link href="/style/main.css" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
+  <script src="/index.js"></script>
+  
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <div class="container">
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+          <a href="/admin" class="title">nouquick</a>
+          <a href="#newEntry"><i class="fas fa-plus"></i></a>
+          <a href="/logout" class="nav-link"><i class="fas fa-location-arrow"></i></a>      
+      </div>
+      <div class="add-wrapper" id='newEntry'>
+          <ul class="tabs" >
+              <li><a href="/admin/new-student">New Student</a></li>
+              <li><a href="/admin/new-course">New Course</i></a></li>
+              <li><a href="/admin/new-result">New Result</i></a></li>
+              
+          </ul>
+      </div>
+      <div class="nav-content">
+          <ul class="tabs">
+              <li><a href="#students"><i class="fas fa-book"></i></a></li>
+              <li><a href="#results"><i class="fas fa-receipt"></i></a></li>
+              <li><a href="#courses"><i class="fas fa-school"></i></a></li>
+          </ul>
+      </div>
+   </nav>
+   <main>
+     <section id="students" class="admin-content">
+       <%for(let i = 0; i < profiles.length; i++){%>
+          <article class="student-profile">
+              <span><%=i+1%></span>
+              <span><%=profiles[i].firstName%></span>
+              <span><%=profiles[i].lastName%></span>
+              <span><a href="/admin/students/<%=profiles[i]._id%>"><%=profiles[i].matric%></a></span> 
+           </article>
+       <%}%>
+     </section>
+     
+     <section id="results" class="admin-content">
+        <%for(let i = 0; i < results.length; i++){%>
+          <article class="student-profile">
+              <p><%=results[i].code%></p>
+              <%results[i].score.forEach(function(scr){%>
+              <div class="result-block">
+                <span><%=scr.matric%></span>
+                <span><%=scr.status%></span>
+                <form action="/admin/results/<%=scr._id%>?_method=DELETE" 
+                  onsubmit="return confirm('Do you want to delete this result?');" 
+                  method="POST">
+                <button><i class="fas fa-trash"></i></button>
+                </form>
+              </div>
+              <%})%>
+          </article>
+       <%}%>
+     </section>
+
+     <section id="courses" class="admin-content">
+        <%for(let i = 0; i < courses.length; i++){%>
+          <article class="student-profile">
+              <p><%=courses[i].code%></p>
+              <div>
+                <span><%=courses[i].title%></span>
+                <span><%=courses[i].units%></span>
+                <form action="/admin/courses/<%=courses[i]._id%>?_method=DELETE" 
+                  onsubmit="return confirm('Do you want to delete this course?');" 
+                  method="POST">
+                <button><i class="fas fa-trash"></i></button>
+                </form>
+              </div>
+          </article>
+       <%}%>
+     </section>    
+   </main>
+  </div>
+
+</body>
+</html>
