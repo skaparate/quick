@@ -17,7 +17,7 @@ const User = require('./public/src/models/userModel');
 //mongoose.connect('mongodb://localhost/nouquick');
 (function db () {
     try {
-        const uri = `mongodb://${process.env.DB_HOST}`;
+        const uri = `mongodb+srv://${process.env.DB_HOST}`;
         const options = {
     user: process.env.DB_USER,
     pass: process.env.DB_PASS,
