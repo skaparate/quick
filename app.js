@@ -34,7 +34,7 @@ const User = require('./public/src/models/userModel');
 })();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 80;
 const adminRouter = require('./public/src/routes/adminRoutes');
 const studentRouter = require('./public/src/routes/studentRoutes');
 const authRouter = require('./public/src/routes/authRoutes');
