@@ -17,9 +17,19 @@ const User = require('./public/src/models/userModel');
 //mongoose.connect('mongodb://localhost/nouquick');
 (function db () {
     try {
-        return mongoose.connect('mongodb://iyinoluwa:iyinoluwa1@ds037611.mlab.com:37611/nouquick');
+        const uri = `mongodb://${process.env.DB_HOST}`;
+        const options = {
+    user: process.env.DB_USER,
+    pass: process.env.DB_PASS,
+    dbName: process.env.DB_NAME,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+  };
+        return mongoose.connect(uri, options);
     } catch (error) {
-        console.error();
+        console.error(error);
     }
 })();
 
